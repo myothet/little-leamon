@@ -1,6 +1,6 @@
 function Button(props){
 
-    return(<button width="100px" height="30px" backgroundColour="gold borderRadius=10px">{props.children}</button>);
+    return(<button style={{width:"150", height:"30px" ,backgroundColor:"gold", borderRadius:"10px"}}>{props.children}</button>);
 
 
 }

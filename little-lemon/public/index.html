@@ -30,12 +30,19 @@
     -->
     <title>React App</title>
     <style>
-      *{
+      
+      body {
+  display: flex;
+  padding:20px;
+  justify-content: center; /* Centers the .highlight element horizontally */
+  align-items: center; /* Optional: Centers vertically if needed */
+  height: 100vh; /* Ensure it takes full height */
+}
 
-        margin:10px;
-      }
+
       nav{
   display:flex;
+  width: 100%;
   
   align-items: center;
   justify-content: center;
@@ -57,7 +64,10 @@ nav ul li{
 }
 main{
   display:flex;
-  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
 
 }
 .main-button{
@@ -73,25 +83,103 @@ main{
 
 .herosection{
  display:flex;
- height:30vh;
+ padding:10px;
+
+ height:300px;
  width:100vw;
  background-color:darkslategrey;
  justify-content: center;
+ overflow-y:visible
  
 }
-.herosection article h3{
+.herosection article h1{
 
   color:gold;
+  font-size: 60px;
+  margin-bottom:1px;
 }
 .herosection article p{
 
   color:white;
 }
 .herosection img{
-
-  width:100px;
-  height:100px;
+  margin-left: 10px;
+  width:120%;
+  height:120%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px 1px;
 }
+
+.hightlight{
+  margin-top: 40px;
+  
+  display:flex;
+  flex-direction: column;
+
+ height:300px;
+ width:50vw;
+ 
+ justify-content: center;
+ 
+}
+
+
+.higthlighttext{
+  
+  display: flex; /* Align the content inside the special text box */
+  width:100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+.hightlightcard{
+  display:flex;
+  margin-top:10px;;
+  
+  display:flex;
+  
+  
+  
+}
+.card{
+   width:150px;
+   height: 200px;
+   border-top-left-radius: 15px;   /* Rounded top-left corner */
+  border-top-right-radius: 15px; 
+   border:1px solid gray;
+   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+   padding:0;
+   overflow: hidden;
+   background-color: lightgray;
+   opacity:0.8;
+   
+   
+   
+
+
+}
+.cardImg{
+
+  width:100%;
+  height:35%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;;
+  object-fit: cover;
+}
+.card p{
+  margin-left:5px;
+  margin-right: 5px;
+  width:90%;
+  height:50%;
+  font-size: x-small;
+  justify-content: stretch;
+  background-color: lightgray;
+
+}
+
     </style>
   </head>
   <body>

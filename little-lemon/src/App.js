@@ -7,13 +7,22 @@ import UL from "./UL";
 import Nav from "./Nav";
 import HeroSection from "./HeroSection"
 import littlelemon from "./asserts/littlelemon.jpg";
-import sausage from "./asserts/sausage.jpb"
+import sausage from "./asserts/sausage.jpg"
+import Button from "./Button"
+import HightLight from './HightLight';
+import HightLightHeader from './HightLitghtHeader';
+import HightLightCard  from "./HightLightCard";
+import Card from "./Card"
+import Home from "./Home";
+import { BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+
 
 function App() {
 
   let items=["Home","About","Reservation","Order","Online","Login"];
   return (
     <>
+     <Router>
       <Header>
         <Nav>
           <img src={littlelemon} alt="Description"  width="150px"  height="40px"/>
@@ -21,36 +30,15 @@ function App() {
 
         </Nav>
       </Header>
-      <Main>
-        <HeroSection>
-             <article>
-              <h3>
 
-                Little Lemon
-              </h3>
-              <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p> 
-              <p>sed do eiusmod tempor ,</p>
-              <p>incididunt ut labore et dolore magna aliqua.</p>
-              
-             </article>
-             <article>
-                <img  src={sausage}/>
+     
+        <Routes>
+        <Route path="Home" element={<Home/>}/>
 
-             </article>
+        </Routes>
 
-
-        </HeroSection>
-
-
-      </Main>
-      <Footer>
-          
-        
-      </Footer>
-
-
-
+      </Router>
+      
     </>
   );
 }
