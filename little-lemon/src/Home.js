@@ -8,6 +8,11 @@ import Button from "./Button";
 import HightLightHeader from './HightLitghtHeader';
 import HightLightCard  from "./HightLightCard";
 import Main from "./Main";
+import greek from "./asserts/greek-salad.jpg"
+import delivery from "./asserts/delivery.jpg"
+import bruchetta from "./asserts/bruchetta.jpg"
+import pasta from "./asserts/pasta.jpg"
+import cake from "./asserts/cake.jpg"
 
 export default function Home(){
 
@@ -37,11 +42,33 @@ return(
     <HightLight>
       <HightLightHeader/>
       <HightLightCard>
-            <Card path={sausage} text="the fauous greek slag is spicy and tasty.It's mixture of Europian and Asia style">
+            <Card path={greek}  secondpath={delivery}
+            subtitle="Greek Salad"
+            price="12.00"
+            text="The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. ">
 
 
 
             </Card>
+            <Card path={bruchetta}  secondpath={delivery}
+             subtitle="Bruchetta"
+             price="12.00"
+            
+            text="Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. ">
+
+
+
+              </Card>
+              <Card path={cake}  secondpath={delivery} 
+               subtitle="Lemon Dessert"
+               price="12.00"
+              
+              text="This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.">
+
+
+
+                </Card>
+
 
 
 
