@@ -5,7 +5,7 @@ function UL(props){
     return(
         <ul>
             {props.items.map((item, index) => (
-                <li key={index}><Link to={item}>{item}</Link></li>
+                <li key={index}><Link to={item.toLowerCase()}>{item}</Link></li>
             ))}
         </ul>);
 }

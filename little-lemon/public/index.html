@@ -57,11 +57,30 @@ footer{
   justify-content: end;
 
 }
+nav ul{
+
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+
+
+}
 nav ul li{
 
   margin-right: 10px;
+  list-style: none;
   color:blue;
   cursor: pointer;
+ 
+}
+
+nav ul li a{
+
+  text-decoration: none;
+  color:blue;
 }
 main{
   display:flex;
@@ -206,8 +225,9 @@ font-weight: bold;
 }
 
 .card-subtitle > p:last-child{
-
-  color:yellow;
+  font: size 16px;
+  font-weight: bold;;
+  color:#EE9972;
 }
 .card-subtitle:last-child{
 

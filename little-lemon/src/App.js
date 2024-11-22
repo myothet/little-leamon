@@ -14,7 +14,7 @@ import HightLightHeader from './HightLitghtHeader';
 import HightLightCard  from "./HightLightCard";
 import Card from "./Card"
 import Home from "./Home";
-import { BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+import { BrowserRouter as Router,Routes,Route,Link,Navigate} from "react-router-dom";
 
 
 function App() {
@@ -33,7 +33,9 @@ function App() {
 
      
         <Routes>
-        <Route path="Home" element={<Home/>}/>
+        <Route path="/" element={<Navigate to="/home"/>} />
+      
+        <Route path="home" element={<Home/>}/>
 
         </Routes>
 
