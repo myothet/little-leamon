@@ -4,7 +4,7 @@ export default function HightLightHeader(){
 return(<div className="higthlighttext">
     
  
- <h1>Special</h1>
+ <h1>This Week Special</h1>
  <Button>Online Menu</Button>
 
 

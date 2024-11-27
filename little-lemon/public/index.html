@@ -33,10 +33,12 @@
       
       body {
   display: flex;
+  
   padding:20px;
   justify-content: center; /* Centers the .highlight element horizontally */
   align-items: flex-start; /* Optional: Centers vertically if needed */
   height: 100vh; /* Ensure it takes full height */
+  width:100%;
 }
 
 
@@ -53,8 +55,13 @@
 footer{
 
   display :flex;
-  margin-top: 20px;
+  margin-top: 15vh;
   justify-content: end;
+
+}
+footer h2{
+ margin-right:30px;
+
 
 }
 nav ul{
@@ -116,6 +123,7 @@ main{
 
   color:gold;
   font-size: 60px;
+  font-family:"Markazi Text";
   margin-bottom:1px;
 }
 .herosection article p{
@@ -127,13 +135,14 @@ main{
   width:120%;
   height:120%;
   border-radius: 15px;
-  box-shadow: 1px 1px 1px 1px;
+  box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.1);
 }
 
 .hightlight{
-  margin-top: 60px;
+  margin-top: 10vh;
   
   display:flex;
+
   flex-direction: column;
 
  height:300px;
@@ -157,6 +166,7 @@ main{
 }
 .hightlightcard{
   display:flex;
+  
   margin-top:10px;;
   gap:20px;
   display:flex;
@@ -165,7 +175,7 @@ main{
   
 }
 .card{
-  
+   flex-shrink: 0;
    width:200px;
    height: 250px;
    border-top-left-radius: 15px;   /* Rounded top-left corner */
@@ -176,6 +186,7 @@ main{
    overflow: hidden;
    background-color: lightgray;
    opacity:0.8;
+   
    
    
    
@@ -236,7 +247,7 @@ font-weight: bold;
 }
 .card-last{
 align-self:self-end;
-bottom:0%;
+
 width:80%;
 display:flex;
 height: fit-content;
@@ -244,6 +255,7 @@ margin-left:5px;
 margin-right:5px;
 justify-content: center;
 align-items: center;
+
 
 
 }
@@ -258,6 +270,30 @@ font-weight: bold;
   width:10%;
   height: 10%;
   object-fit: cover;
+}
+
+.res-form{
+  position:relative;
+  display:flex;
+  width:50%;
+  height: 80%;
+  margin-top: 10px;
+  margin-bottom: 10%;
+  padding-bottom:20px ;
+  padding-top:20px;
+ 
+  
+ 
+  justify-content: center;
+  align-items: center;
+  border:2px solid gray;
+  border-radius: 15px;
+  background-color: gray;
+  z-index: 4;
+
+
+
+
 }
 
     </style>

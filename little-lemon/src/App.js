@@ -14,12 +14,14 @@ import HightLightHeader from './HightLitghtHeader';
 import HightLightCard  from "./HightLightCard";
 import Card from "./Card"
 import Home from "./Home";
+import BookingPage from './BookingPage';
 import { BrowserRouter as Router,Routes,Route,Link,Navigate} from "react-router-dom";
+import BookingForm from './BookingForm';
 
 
 function App() {
 
-  let items=["Home","About","Reservation","Order","Online","Login"];
+  let items=["Home","About","Reservation","Booking","Order","Online","Login"];
   return (
     <>
      <Router>
@@ -36,6 +38,7 @@ function App() {
         <Route path="/" element={<Navigate to="/home"/>} />
       
         <Route path="home" element={<Home/>}/>
+        <Route path="booking" element={<BookingPage/>}/>
 
         </Routes>
 

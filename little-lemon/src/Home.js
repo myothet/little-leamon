@@ -13,12 +13,34 @@ import delivery from "./asserts/delivery.jpg"
 import bruchetta from "./asserts/bruchetta.jpg"
 import pasta from "./asserts/pasta.jpg"
 import cake from "./asserts/cake.jpg"
+import BookingForm from "./BookingForm";
+import {useState} from 'react';
 
 export default function Home(){
+  const [showBookingForm, setShowBookingForm] = useState(false);
+
+  const setBookingCondition=()=>{
+
+    showBookingForm==true?setShowBookingForm(false):setShowBookingForm(true);
+
+  }
+
+
+  const loadForm=()=>{
+    <BookingForm/>
+
+  };
+
+  const handleClick = () => {
+    alert("Button clicked!");
+  };
+
+
 
 return(
     <>
     <Main>
+    {showBookingForm && <BookingForm />}
     <HeroSection>
          <article>
           <h1>
@@ -29,7 +51,7 @@ return(
           Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p> 
           <p>sed do eiusmod tempor ,</p>
           <p>incididunt ut labore et dolore magna aliqua.</p>
-          <Button>Reverse a Table</Button>
+          <Button clicked={setBookingCondition}>Reverse a Table</Button>
           
          </article>
          <article>
@@ -54,7 +76,7 @@ return(
              subtitle="Bruchetta"
              price="12.00"
             
-            text="Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. ">
+            text=" Our Bruschetta  is made from  grilled bread that has been smeared with garlic and  seasoned with salt and  olive oil. ">
 
 
 
@@ -79,6 +101,7 @@ return(
 
 
   </Main>
+  
   <Footer>
       
     
