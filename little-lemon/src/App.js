@@ -17,6 +17,7 @@ import Home from "./Home";
 import BookingPage from './BookingPage';
 import { BrowserRouter as Router,Routes,Route,Link,Navigate} from "react-router-dom";
 import BookingForm from './BookingForm';
+import { ConfirmedBooking } from './ConfirmedBooking';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
       
         <Route path="home" element={<Home/>}/>
         <Route path="booking" element={<BookingPage/>}/>
+        <Route path="/confirmed" element={<ConfirmedBooking />} />
 
         </Routes>
 

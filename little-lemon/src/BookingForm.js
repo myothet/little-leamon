@@ -9,6 +9,15 @@ const [guest,setGuest]=useState(1);
 const [time,setTime]=useState("");
 const [occasion,setOccasion]=useState("");
 
+const [formData, setFormData] = useState({
+   date: "",
+   time: "",
+   guests: "",
+   occasion: "",
+ });
+
+
+
 const setGuestNumber=(event)=>{
 
    event.preventDefault();
@@ -16,6 +25,11 @@ const setGuestNumber=(event)=>{
    
    
    
+   }
+   const setBookingTime=(e)=>{
+
+     setTime(e.target.value);
+
    }
 
 const setResTime=(event)=>{
@@ -41,22 +55,52 @@ setOccasion(event.target.value);
 
 }
 
+const handleDateChange = (event) => {
+   const { name, value } = event.target;
+   console.log("e.target is",event.target);
+   const selectedDate = value;
+   const date=new Date(selectedDate);
+   
+   props.dispath({ type: "update", payload: date });
+   setFormData({
+      ...formData,
+      [name]: value,
+    });
+ };
+
+
+ const handleChange = (e) => {
+   const { name, value } = e.target;
+   
+   setFormData({
+     ...formData,
+     [name]: value,
+   });
+ };
+
+ const handleSubmit = (e) => {
+   e.preventDefault(); // Prevent the default browser behavior
+  // console.log("Form submitted:", formData);
+ props.submitForm(formData); 
+
+ };
+
 return(
     <div className="res-form">
-    <form  style={{display: "grid", maxWidth:"200px", gap: "20px",position:"relative"}}>
+    <form aria-labelledby="booking-form-header" onSubmit={handleSubmit} style={{display: "grid", maxWidth:"200px", gap: "20px",position:"relative"} }>
 
-<label for="res-date">Choose date</label>
-   <input type="date" id="res-date" onchange={setResDate}/>
-   <label for="res-time">Choose time</label>
-   <select id="res-time ">
+<label htmlFor="res-date">Choose date</label>
+   <input type="date" name="date" id="res-date" onChange={handleDateChange} value={formData.date}/>
+   <label htmlFor="res-time">Choose time</label>
+   <select id="res-time " name="time" onChange={handleChange} value={formData.time}>
       {props.availableTimes.map((time)=>(<option key={time}>{time}</option>))}
       
    </select>
 
-   <label for="guests">Number of guests</label>
-   <input type="number" placeholder="1" min="1" max="10" id="guests" onChange={setGuestNumber}/>
-   <label for="occasion">Occasion</label>
-   <select id="occasion" onChange={setResOccasion}>
+   <label htmlFor="guests">Number of guests</label>
+   <input type="number" name="guests" placeholder="1" min="1" max="10" id="guests" onChange={handleChange} value={formData.guests}/>
+   <label htmlFor="occasion">Occasion</label>
+   <select id="occasion" name="occasion" onChange={handleChange}  value={formData.occasion}>
       <option>Birthday</option>
       <option>Anniversary</option>
    </select>

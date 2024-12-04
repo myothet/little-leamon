@@ -1,12 +1,47 @@
 import BookingForm from "./BookingForm";
 import Main from "./Main";
-import {useState} from "react";
+import {useReducer} from "react";
 import restaurant from"./asserts/littlelemon-restaurant.jpg";
 import HeroSection from "./HeroSection";
+import {fetchAPI,submitAPI} from "./api"
+import { useNavigate } from "react-router-dom";
+
+export const updateTime = (state, action) => {
+  switch (action.type) {
+      case "update":
+          return fetchAPI(action.payload) // Example filtered times
+      default:
+          return state;
+  }
+};
+
+ export function initializeTimes() {
+  //const data=useEffect(fetchData(),[]);
+  //return ["01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00"];
+  const today = new Date();
+  console.log(today);
+  return fetchAPI(today);
+
+}
 
 
-export default function BookingPage(){
-  const [availableTimes]=useState(["01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00"]);
+
+export default function BookingPage(props){
+
+  const navigate = useNavigate();
+
+
+const[availableTimes,dispath]=useReducer(updateTime,[],initializeTimes);
+
+const submitForm = async (formData) => {
+  const isSuccessful = await submitAPI(formData); // Replace `submitAPI` with your actual API call
+
+  if (isSuccessful) {
+    navigate("/confirmed"); // Navigate to the confirmation page
+  } else {
+    console.error("Form submission failed");
+  }
+};
 
   
 return(
@@ -32,7 +67,7 @@ return(
     
      </HeroSection>
 
-    <BookingForm availableTimes={availableTimes}/>
+    <BookingForm availableTimes={availableTimes} dispath={dispath} submitForm={submitForm}/>
   </Main>
 
 )

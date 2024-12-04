@@ -1,5 +1,14 @@
-function Main(props){
+import BookingPage from "./BookingPage";
 
-    return(<main>{props.children}</main>)
+import  {useState} from "react";
+function Main({children}){
+
+   
+
+    
+    return(<main>{children}
+    
+   
+    </main>)
 }
 export default Main;

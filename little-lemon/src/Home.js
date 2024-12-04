@@ -55,7 +55,7 @@ return(
           
          </article>
          <article>
-            <img  src={sausage}/>
+            <img  src={sausage} loading="lazy"/>
 
          </article>
 
