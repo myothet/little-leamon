@@ -14,21 +14,25 @@ import bruchetta from "./asserts/bruchetta.jpg"
 import pasta from "./asserts/pasta.jpg"
 import cake from "./asserts/cake.jpg"
 import BookingForm from "./BookingForm";
+import BookingPage from "./BookingPage";
 import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home(){
   const [showBookingForm, setShowBookingForm] = useState(false);
+  const navigate = useNavigate();
 
   const setBookingCondition=()=>{
     console.log("clicked buton");
+    navigate('/booking');
 
-    showBookingForm==true?setShowBookingForm(false):setShowBookingForm(true);
+   // showBookingForm==true?setShowBookingForm(false):setShowBookingForm(true);
 
   }
 
 
   const loadForm=()=>{
-    <BookingForm/>
+    navigate('/booking');
 
   };
 
