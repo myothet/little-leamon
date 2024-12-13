@@ -20,6 +20,7 @@ export default function Home(){
   const [showBookingForm, setShowBookingForm] = useState(false);
 
   const setBookingCondition=()=>{
+    console.log("clicked buton");
 
     showBookingForm==true?setShowBookingForm(false):setShowBookingForm(true);
 
@@ -51,7 +52,7 @@ return(
           Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p> 
           <p>sed do eiusmod tempor ,</p>
           <p>incididunt ut labore et dolore magna aliqua.</p>
-          <Button clicked={setBookingCondition}>Reverse a Table</Button>
+          <Button clicked={setBookingCondition} isdisable={false}>Reverse a Table</Button>
           
          </article>
          <article>

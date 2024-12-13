@@ -2,6 +2,7 @@
 import { initializeTimes } from './BookingPage';  // Import the function to test
 import { fetchAPI } from './api';  // Import fetchAPI
 import { updateTime } from './BookingPage';
+import BookingForm from './BookingForm';
 
 // Mock the fetchAPI function
 jest.mock('./api', () => ({
@@ -103,3 +104,5 @@ describe('updateTime reducer', () => {
       expect(result).toEqual(initialState);
     });
   });
+
+  
